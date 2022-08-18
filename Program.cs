@@ -8,6 +8,13 @@ static ushort CreateArtist(disquaireContext ctx, string name, DateOnly birthday)
     return artistToCreate.Id;
 }
 
+static void UpdateArtist(disquaireContext ctx, string name, DateOnly birthday, ushort id){
+    Artist artistToUpdate = ctx.Artists.Find(id);
+    artistToUpdate.Name = name;
+    artistToUpdate.Birthday = birthday;
+    ctx.SaveChanges();
+}
+
 
 
 
