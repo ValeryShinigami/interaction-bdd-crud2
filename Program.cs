@@ -15,6 +15,14 @@ static void UpdateArtist(disquaireContext ctx, string name, DateOnly birthday, u
     ctx.SaveChanges();
 }
 
+static void DeleteArtist(disquaireContext ctx, ushort id) 
+{
+     Artist artistToRemove = ctx.Artists.Find(id);
+    ctx.Artists.Remove(artistToRemove); 
+    ctx.SaveChanges();
+       
+}
+
 
 
 
